@@ -32,7 +32,4 @@ jobs:
     - name: copy tests
       run: cp -r test /tmp
     - name: run tests
-      run: |
-        sudo -u postgres for t in /tmp/test/*.sql; do
-          psql test -f $t
-        done
+      run: sudo -u postgres bash -c "for t in /tmp/test/*.sql; do psql test -f $t; done"

@@ -20,7 +20,9 @@ jobs:
     - name: download Boost
       run: make boost
     - name: install PostgreSQL
-      run: sudo apt-get -y install postgresql
+      run: |
+        sudo apt update
+        sudo apt -y install postgresql
     - name: make
       run: make
     - name: install
